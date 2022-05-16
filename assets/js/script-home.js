@@ -1,4 +1,4 @@
-
+const AWS = require ("aws-sdk");
 var authData = {
   UserPoolId: "us-east-1_Zvl1JB1RS",
   ClientId: "7kijisuv7m9dsvgpn1ic26bvvb",
