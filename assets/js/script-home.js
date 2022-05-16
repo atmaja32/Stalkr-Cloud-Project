@@ -11,8 +11,8 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: 'us-east-1:3876d161-789b-4f34-9dc2-03cf80d34457',
 });
 var poolData = {
-  UserPoolId: "us-east-1_Zvl1JB1RS",
-  ClientId: "7kijisuv7m9dsvgpn1ic26bvvb",
+  UserPoolId: "us-east-1_hd7ah4rYe",
+  ClientId: "3qd3h6u6o5h4e39q1amnqc4bae",
 };
 var cognitoUser = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
