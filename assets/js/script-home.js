@@ -16,7 +16,7 @@ function parseJwt(token) {
 const token = window.location.hash;
 var user;
 if (token) {
-  user = parseJwt(token.split("id_token="));
+  user = parseJwt(token[1].split("id_token="));
   console.log("user---: ", user);
 }
 
