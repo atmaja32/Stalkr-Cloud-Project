@@ -1,23 +1,24 @@
-// var authData = {
-//   UserPoolId: "us-east-1_Zvl1JB1RS",
-//   ClientId: "7kijisuv7m9dsvgpn1ic26bvvb",
-// };
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
 
-// var userPool = new AmazonCognitoIdentity.CognitoUserPool(authData);
-// var cognitoUser = userPool.getCurrentUser();
-// console.log("CurrentUser: ",cognitoUser);
-AWS.config.region = 'us-east-1'; // Region
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-1:3876d161-789b-4f34-9dc2-03cf80d34457',
-});
-var poolData = {
-  UserPoolId: "us-east-1_hd7ah4rYe",
-  ClientId: "3qd3h6u6o5h4e39q1amnqc4bae",
-};
-var cognitoUser = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+  return JSON.parse(jsonPayload);
+}
 
-console.log("CurrentUser: ", cognitoUser);
-
+const token = window.location.hash;
+var user;
+if (token) {
+  user = parseJwt(token.split("id_token="));
+  console.log("user---: ", user);
+}
 
 function getTable() {
   var apiClient = apigClientFactory.newClient();
@@ -40,8 +41,8 @@ function getTable() {
   // json_data = getJobData(params)
   apiClient.jobGet(params, "", add_params).then(function (res) {
     console.log("Response: ", res);
-    var jobs = res.data['jobs'];
-    console.log("Jobs: ",jobs);
+    var jobs = res.data["jobs"];
+    console.log("Jobs: ", jobs);
     let placeholder = document.querySelector("#data_output");
     let out = "";
     for (let job of jobs) {
