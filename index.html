@@ -17,26 +17,32 @@
     <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
     <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
     <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+    <script src="amazon-cognito-auth.min.js"></script>
+    <script src="amazon-cognito-identity.js"></script>
+    <script src="amazon-cognito-identity.min.js"></script>
+    <script src="aws-sdk.js"></script>
+    <script src="aws-sdk.min.js"></script>
+    <script src="aws-cognito-sdk.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1135.0.min.js"></script>
     <script src="./assets/js/sdk/aws-sdk.js"></script>
-    <script src="./node_modules/amazon-cognito-identity-js/dist/amazon-cognito-identity.min.js"></script>
 
 </head>
 
 <body>
     <div class="navButton" align="right">
         <button class="button-40" role="button" onclick="window.location.href = 'profile.html'"> My Profile </button>
-        <button class="button-40" role="button" onclick=""> Logout </button>
+        <button class="button-40" role="button" onclick="window.location.href = 'jobsearch.html'"> Job Search </button>
+        
     </div>
-
+    
     <h1>
         <center>Track Job Applications</center>
     </h1>
     <br />
-    <br />
+    <br/>
     <button class="button-40" role="button" onclick="window.location.href = 'addjob.html'"> Add Job </button>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <div class="Application-table">
         <table class="list" id="jobs">
             <thead>
@@ -54,9 +60,7 @@
             </tbody>
         </table>
     </div>
-    <!-- <script src="./assets/js/script-home.js"></script> -->
-    <!-- <script src="./assets/js/temp.js"></script> -->
-    <!-- <script>getTable();</script> -->
+    <script src="./assets/js/script-home.js"></script>
     <script>
         function parseJwt(token) {
             var base64Url = token.split(".")[1];
@@ -77,9 +81,11 @@
         var user;
         if (token) {
             user = parseJwt(token.split("id_token=")[1]);
-            window.localStorage.setItem("username", user["cognito:username"]);
             console.log("user---: ", user);
         }
+        window.localStorage.setItem("username", user["cognito:username"]);
+        var username = window.localStorage.getItem("username");
+        getTable(username);
     </script>
 </body>
 
