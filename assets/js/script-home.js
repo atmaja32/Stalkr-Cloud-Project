@@ -1,4 +1,3 @@
-const AWS = require("aws-sdk");
 
 var authData = {
   UserPoolId: "us-east-1_Zvl1JB1RS",
