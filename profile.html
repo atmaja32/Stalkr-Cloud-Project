@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        My Profile
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./assets/js/sdk/apigClient.js"></script>
+    <script src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+</head>
+
+<body>
+    <div class="navButton" align="right">
+        <button class="button-40" role="button" onclick="window.location.href = 'index.html'"> Home </button>
+        <button class="button-40" role="button" onclick=""> Logout </button>
+    </div>
+    <h1>
+        <center>My Profile</center>
+    </h1>
+    <hr>
+    <div class="employee-form">
+        <form onsubmit="event.preventDefault();uploadResume();" autocomplete="off">
+            <div>
+                <label>UserName*</label><label class="validation-error hide" id="fullNameValidationError">This field is
+                    required.</label>
+                <input type="text" name="username" id="username">
+            </div>
+                <label>Resume</label>
+                <input type="file" name="file" id="file">
+            </div>
+            <br/>
+            <br/>
+            <div class="form-action-buttons" align="center">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <br/>
+        <br/>
+        <div class="form-action-buttons" align="center">
+            <label id="uploadText"></label>
+        </div>
+        
+    </div>
+
+    <script>
+
+        var sdk = apigClientFactory.newClient({});
+
+    </script>
+    <script src="assets/js/script-profile.js"></script>
+</body>
+
+</html>
