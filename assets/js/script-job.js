@@ -1,19 +1,12 @@
 var selectedRow = null;
 
-var authData = {
-  UserPoolId: "us-east-1_Zvl1JB1RS",
-  ClientId: "7kijisuv7m9dsvgpn1ic26bvvb",
-};
 
-var userPool = new AmazonCognitoIdentity.CognitoUserPool(authData);
-var cognitoUser = userPool.getCurrentUser();
-console.log(cognitoUser);
 
 
 
 function onSubmitJob() {
   var formData = readJobFormData();
-  formData["username"] = "deeptipretagouthaman"
+  formData["username"] = window.localStorage.getItem("username");
   console.log(formData);
   var out = submitJobData(formData);
   console.log(out);
