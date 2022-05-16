@@ -112,9 +112,7 @@ function s3upload() {
   if (files) {
     var file = files[0];
     var fileName = file.name;
-    var filePath = "my-first-bucket-path/" + fileName;
-    var fileUrl =
-      "https://" + bucketRegion + ".amazonaws.com/my-first-bucket/" + filePath;
+    var filePath = fileName;
     s3.putObject(
       {
         Key: filePath,
