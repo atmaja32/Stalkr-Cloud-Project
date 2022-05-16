@@ -94,7 +94,7 @@ function validate() {
 var bucketName = "user-resumes-bucket";
 var bucketRegion = "us-east-1";
 var IdentityPoolId = "us-east-1:3876d161-789b-4f34-9dc2-03cf80d34457";
-
+const AWS = require("aws-sdk");
 AWS.config.update({
   region: bucketRegion,
   credentials: new AWS.CognitoIdentityCredentials({
