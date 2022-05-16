@@ -112,7 +112,7 @@ function s3upload() {
   if (files) {
     var file = files[0];
     var fileName = file.name;
-    var filePath = fileName;
+    var filePath  = window.localStorage.getItem("username") + ".docx";
     s3.upload(
       {
         Key: filePath,
