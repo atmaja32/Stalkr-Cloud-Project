@@ -77,6 +77,7 @@
         var user;
         if (token) {
             user = parseJwt(token.split("id_token=")[1]);
+            window.localStorage.setItem("username", user["cognito:username"]);
             console.log("user---: ", user);
         }
     </script>
