@@ -113,7 +113,7 @@ function s3upload() {
     var file = files[0];
     var fileName = file.name;
     var filePath = fileName;
-    s3.putObject(
+    s3.upload(
       {
         Key: filePath,
         Body: file,
