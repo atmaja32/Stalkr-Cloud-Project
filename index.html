@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Track Job Applications
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./assets/js/sdk/apigClient.js"></script>
+    <script src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+    <script src="amazon-cognito-auth.min.js"></script>
+    <script src="amazon-cognito-identity.js"></script>
+    <script src="amazon-cognito-identity.min.js"></script>
+    <script src="aws-cognito-sdk.min.js"></script>
+
+</head>
+
+<body>
+    <div class="navButton" align="right">
+        <button class="button-40" role="button" onclick="window.location.href = 'profile.html'"> My Profile </button>
+        <button class="button-40" role="button" onclick=""> Logout </button>
+    </div>
+    
+    <h1>
+        <center>Track Job Applications</center>
+    </h1>
+    <br />
+    <br/>
+    <button class="button-40" role="button" onclick="window.location.href = 'addjob.html'"> Add Job </button>
+    <br/>
+    <br/>
+    <div class="Application-table">
+        <table class="list" id="jobs">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="data_output">
+                <!---populate from javascript-->
+                <tr>
+                    <td><button class="deletebtn">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="./assets/js/script-home.js"></script>
+    <script>getTable();</script>
+</body>
+
+</html>

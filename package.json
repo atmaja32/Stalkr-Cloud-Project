@@ -1,0 +1,14 @@
+{
+  "name": "stalkrproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivansh",
+  "license": "ISC",
+  "dependencies": {
+    "amazon-cognito-identity-js": "^5.2.8"
+  }
+}
