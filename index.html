@@ -79,11 +79,12 @@
 
         const token = window.location.hash;
         var user;
-        if (token) {
+        if (token.length) {
             user = parseJwt(token.split("id_token=")[1]);
+            window.localStorage.setItem("username", user["cognito:username"]);
             console.log("user---: ", user);
         }
-        window.localStorage.setItem("username", user["cognito:username"]);
+        
         var username = window.localStorage.getItem("username");
         function getTable(username) {
   var apiClient = apigClientFactory.newClient();
