@@ -6,7 +6,10 @@
 // var userPool = new AmazonCognitoIdentity.CognitoUserPool(authData);
 // var cognitoUser = userPool.getCurrentUser();
 // console.log("CurrentUser: ",cognitoUser);
-
+AWS.config.region = 'us-east-1'; // Region
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'us-east-1:3876d161-789b-4f34-9dc2-03cf80d34457',
+});
 var poolData = {
   UserPoolId: "us-east-1_Zvl1JB1RS",
   ClientId: "7kijisuv7m9dsvgpn1ic26bvvb",
