@@ -35,21 +35,21 @@
                     required.</label>
                 <input type="text" name="username" id="username">
             </div>
-                <label>Resume</label>
-                <input type="file" name="file" id="file">
-            </div>
-            <br/>
-            <br/>
-            <div class="form-action-buttons" align="center">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
-        <br/>
-        <br/>
-        <div class="form-action-buttons" align="center">
-            <label id="uploadText"></label>
-        </div>
-        
+            <label>Resume</label>
+            <input type="file" id="fileUpload">
+    </div>
+    <br />
+    <br />
+    <div class="form-action-buttons" align="center">
+        <button type="submit" value="Submit" onclick="s3upload()">Submit</button>
+    </div>
+    </form>
+    <br />
+    <br />
+    <div class="form-action-buttons" align="center">
+        <label id="uploadText"></label>
+    </div>
+
     </div>
 
     <script>
@@ -58,6 +58,9 @@
 
     </script>
     <script src="assets/js/script-profile.js"></script>
+
+    <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script> -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </body>
 
 </html>
